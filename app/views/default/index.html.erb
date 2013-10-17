@@ -73,41 +73,27 @@
   <div class="row news">
     <div class="span10 offset1">
       <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-          <div class="accordion-heading">
-            <h2>
-              <a class="accordion-toggle" data-parent="#accordion2" href="#">
-                Тийм Дизастър отива в Холандия!
-              </a>
-            </h2>
-          </div>
-          <div id="collapseOne" class="accordion-body collapse in">
-            <div class="author" style="padding-left: 15px">
-              <h5><%= image_tag 'team/niki.jpg', :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name">Николай Найденов</span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date">28 Август 2013</span></h5>
+
+        <% @articles.each do |a| %>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <h2>
+                <a class="accordion-toggle" data-parent="#accordion2" href="#">
+                  <%= a.title %>
+                </a>
+              </h2>
             </div>
-            <div class="news-inner">
-              <p>Николай Найденов, Павел Митренга, Антон Евангелатов и Стефан Василев ще се състезават на 14 Август във вторият кръг от Европейското Първенство по кънки на рампа. Момчетата се финансират от EC Rotterdam, Vertigo и АИСА Дизастър.</p>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-group">
-          <div class="accordion-heading">
-            <h2>
-              <a class="accordion-toggle" data-parent="#accordion2" href="#">
-                Пролетни Сесии в Монтана '11
-              </a>
-            </h2>
-          </div>
-          <div id="collapseThree" class="accordion-body collapse in">
-            <div class="author" style="padding-left: 15px">
-              <h5><%= image_tag 'team/pavel.jpg', :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name">Павел Митренга</span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date">28 Август 2013</span></h5>
-            </div>
-            <div class="news-inner">
-              <p>Пролетните сесии в Монтана се завръщат с още по-голям набор от алтернативни спортове събрани на едно място. Тази година, по скоро за посрещане на лятото отколкото на пролетта, датата ще бъде 18 Юни, мястото скейтпарка в град Монтана. Ако се занимаваш с кънки, ски, сноуборд, БМХ, wakе, wakeski или скейт, заповядай на най-масовият фестивал за алтернативни спортове, за да покараш с приятели и да се позабавляваш.</p>
-              <p><a href="#" class="btn">Прочети повече</a></p>
+            <div id="collapseOne" class="accordion-body collapse in">
+              <div class="author" style="padding-left: 15px">
+                <h5><%= image_tag 'team/niki.jpg', :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= a.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= a.created_at %></span></h5>
+              </div>
+              <div class="news-inner">
+                <%= raw a.summary %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
+
       </div>
     </div>
   </div>
