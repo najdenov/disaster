@@ -18,14 +18,21 @@
       </a>
       <a class="brand" href="#"><%= image_tag 'logo.png' %></a>
       <div class="nav-collapse">
+        <% if I18n.locale == I18n.default_locale %>
+          <a href="/?locale=bg" class="btn pull-right hidden-phone hidden-tablet" style="margin-left: 10px; margin-top: 25px;">BG</a>
+        <% else %>
+          <a href="/?locale=en" class="btn pull-right hidden-phone hidden-tablet" style="margin-left: 10px; margin-top: 25px;">EN</a>
+        <% end %>
+
         <ul class="nav pull-right">
-          <li><a href="#"><%= t('.menu.association') %></a></li>
-          <li><a href="#"><%= t('.menu.events') %></a></li>
-          <li><a href="#"><%= t('.menu.school') %></a></li>
-          <li><a href="#"><%= t('.menu.community') %></a></li>
-          <li><a href="#"><%= t('.menu.photos') %></a></li>
-          <li><a href="#"><%= t('.menu.videos') %></a></li>
+          <li><a href="#"><%= t('menu.association') %></a></li>
+          <li><a href="#"><%= t('menu.events') %></a></li>
+          <li><a href="#"><%= t('menu.school') %></a></li>
+          <li><a href="#"><%= t('menu.community') %></a></li>
+          <li><a href="#"><%= t('menu.photos') %></a></li>
+          <li><a href="#"><%= t('menu.videos') %></a></li>
         </ul>
+
       </div>
     </div>
   </div>
