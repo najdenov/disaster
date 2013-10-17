@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/nonsense/rails_admin_multiple_upload
+  revision: f932fa866f93295561906211db3cb72115b4a35b
+  branch: rails4
+  specs:
+    rails_admin_multiple_upload (0.0.1)
+      rails
+      simple_form
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -149,6 +158,9 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    simple_form (3.0.0)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -197,6 +209,7 @@ DEPENDENCIES
   rails (= 4.0.0)
   rails_admin
   rails_admin_globalize_field
+  rails_admin_multiple_upload!
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3

@@ -7,7 +7,7 @@ RailsAdmin.config do |config|
   ################  Global configuration  ################
 
   # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['Disaster', 'Admin']
+  config.main_app_name = ['AISA Disaster | Administrative Panel', '']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
@@ -56,5 +56,17 @@ RailsAdmin.config do |config|
     visible false
     configure :locale, :hidden
     include_fields :locale, :title, :summary, :content
+  end
+
+  config.actions do
+    dashboard
+    index
+    new
+    multiple_upload do
+      only Album
+    end
+    show
+    edit
+    delete
   end
 end

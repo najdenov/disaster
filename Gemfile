@@ -56,3 +56,5 @@ gem "globalize"
 gem 'rails_admin_globalize_field'
 
 gem 'paperclip'
+
+gem 'rails_admin_multiple_upload', :git => 'git://github.com/nonsense/rails_admin_multiple_upload', :branch => 'rails4'
