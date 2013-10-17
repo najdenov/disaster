@@ -11,12 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131017153746) do
+ActiveRecord::Schema.define(version: 20131017154252) do
+
+  create_table "article_translations", force: true do |t|
+    t.integer  "article_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.text     "summary"
+    t.text     "content"
+  end
+
+  add_index "article_translations", ["article_id"], name: "index_article_translations_on_article_id"
+  add_index "article_translations", ["locale"], name: "index_article_translations_on_locale"
 
   create_table "articles", force: true do |t|
     t.string   "title"
-    t.string   "summary"
-    t.string   "content"
+    t.text     "summary",    limit: 255
+    t.text     "content",    limit: 255
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
