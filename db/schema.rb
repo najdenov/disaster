@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131017164446) do
+ActiveRecord::Schema.define(version: 20131017173807) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -66,6 +66,38 @@ ActiveRecord::Schema.define(version: 20131017164446) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
+
+  create_table "slider_item_translations", force: true do |t|
+    t.integer  "slider_item_id", null: false
+    t.string   "locale",         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "caption"
+  end
+
+  add_index "slider_item_translations", ["locale"], name: "index_slider_item_translations_on_locale"
+  add_index "slider_item_translations", ["slider_item_id"], name: "index_slider_item_translations_on_slider_item_id"
+
+  create_table "slider_items", force: true do |t|
+    t.text     "caption",              limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
+
+  create_table "user_translations", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  add_index "user_translations", ["locale"], name: "index_user_translations_on_locale"
+  add_index "user_translations", ["user_id"], name: "index_user_translations_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
