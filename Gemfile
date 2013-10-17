@@ -54,3 +54,5 @@ gem "devise"
 
 gem "globalize"
 gem 'rails_admin_globalize_field'
+
+gem 'paperclip'

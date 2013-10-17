@@ -14,7 +14,7 @@ RailsAdmin.config do |config|
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
 
-  config.included_models = ['Article','Article::Translation', 'User']
+  config.included_models = ['Article','Article::Translation', 'User', 'Album', 'Photo']
 
   # If you want to track changes on your models:
   # config.audit_with :history, 'User'
