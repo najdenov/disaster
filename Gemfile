@@ -39,7 +39,16 @@ end
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'capistrano'
+gem 'rvm-capistrano'
+
+gem 'pry'
+gem 'better_errors'
+gem 'binding_of_caller'
+
+gem 'mysql2'
+
+gem 'tinymce-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
