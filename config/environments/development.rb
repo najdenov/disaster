@@ -26,4 +26,8 @@ Disaster::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config.i18n.fallbacks = true
+  config.i18n.default_locale = :en
+  config.i18n.available_locales = [:en, :bg]
 end

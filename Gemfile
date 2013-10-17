@@ -43,8 +43,6 @@ gem 'capistrano'
 gem 'rvm-capistrano'
 
 gem 'pry'
-gem 'better_errors'
-gem 'binding_of_caller'
 
 gem 'mysql2'
 
@@ -67,3 +65,5 @@ gem 'rails_admin_globalize_field'
 gem 'paperclip'
 
 gem 'rails_admin_multiple_upload', :git => 'git://github.com/nonsense/rails_admin_multiple_upload', :branch => 'rails4'
+
+gem 'paper_trail'
