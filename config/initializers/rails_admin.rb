@@ -42,6 +42,8 @@ RailsAdmin.config do |config|
     end
     show
     edit
+    history_index
+    history_show
     delete
   end
 end
