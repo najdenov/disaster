@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131017173807) do
+ActiveRecord::Schema.define(version: 20131020124738) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -33,9 +33,6 @@ ActiveRecord::Schema.define(version: 20131017173807) do
   add_index "article_translations", ["locale"], name: "index_article_translations_on_locale"
 
   create_table "articles", force: true do |t|
-    t.string   "title"
-    t.text     "summary",    limit: 255
-    t.text     "content",    limit: 255
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -79,7 +76,6 @@ ActiveRecord::Schema.define(version: 20131017173807) do
   add_index "slider_item_translations", ["slider_item_id"], name: "index_slider_item_translations_on_slider_item_id"
 
   create_table "slider_items", force: true do |t|
-    t.text     "caption",              limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "picture_file_name"
@@ -116,7 +112,6 @@ ActiveRecord::Schema.define(version: 20131017173807) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

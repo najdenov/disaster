@@ -6,11 +6,4 @@ class Article < ActiveRecord::Base
   accepts_nested_attributes_for :translations, :allow_destroy => true
 
   has_paper_trail
-
-  rails_admin do
-    edit do
-      field :user
-      field :translations
-    end
-  end
 end
