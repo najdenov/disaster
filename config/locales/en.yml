@@ -31,6 +31,7 @@ en:
   section_title:
     pro_team: "Pro team"
     events: "Events"
+    sponsors: "Sponsors"
 
   events:
     upcoming_event: "upcoming event"
