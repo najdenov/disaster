@@ -14,7 +14,7 @@ RailsAdmin.config do |config|
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
 
-  config.included_models = ['Article','Article::Translation', 'User', 'User::Translation', 'SliderItem', 'SliderItem::Translation', 'Member', 'Member::Translation', 'Event', 'Event::Translation', 'Album', 'Photo']
+  config.included_models = ['Article','Article::Translation', 'User', 'User::Translation', 'SliderItem', 'SliderItem::Translation', 'Member', 'Member::Translation', 'Event', 'Event::Translation', 'Album', 'Photo', 'Album::Translation']
 
   config.audit_with :paper_trail, 'User'
 
@@ -55,6 +55,12 @@ RailsAdmin.config do |config|
     visible false
     configure :locale, :hidden
     include_fields :locale, :title, :summary, :content
+  end
+
+  config.model 'Album::Translation' do
+    visible false
+    configure :locale, :hidden
+    include_fields :locale, :summary
   end
 
   config.actions do

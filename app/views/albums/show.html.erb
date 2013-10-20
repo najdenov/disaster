@@ -8,12 +8,25 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container" style="margin-bottom: 20px">
   <div class="row albums">
     <div class="span10 offset1">
-      <% @album.photos.each do |p| %>
-        <%= p %>
-      <% end %>
+      <div class="author" style="padding-left: 15px; border-top: 0">
+        <h5><%= image_tag @album.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= @album.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l @album.created_at.to_date, :format => :long %></span></h5>
+      </div>
+      <%= raw @album.summary %>
+    </div>
+  </div>
+</div><!-- .container -->
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <div id="galleria">
+        <% @album.photos.each do |p| %>
+          <a href="<%= p.file.url(:detailed) %>"><%= image_tag(p.file.url(:thumb), :data => { :big => p.file.url(:detailed), :title => p.caption }, :alt => "") %></a>
+        <% end %>
+      </div>
     </div>
   </div>
 </div><!-- .container -->

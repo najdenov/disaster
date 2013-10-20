@@ -11,12 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020132832) do
+ActiveRecord::Schema.define(version: 20131020143523) do
+
+  create_table "album_translations", force: true do |t|
+    t.integer  "album_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "summary"
+  end
+
+  add_index "album_translations", ["album_id"], name: "index_album_translations_on_album_id"
+  add_index "album_translations", ["locale"], name: "index_album_translations_on_locale"
 
   create_table "albums", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "article_translations", force: true do |t|
