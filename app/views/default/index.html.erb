@@ -4,10 +4,10 @@
     <div class="carousel-inner">
 
       <% @slider_items.each_with_index do |s, i| %>
-      <div class="item <%= "active" if i == 0 %>">
-        <%= image_tag s.picture.url(:detailed) %>
-        <%= raw s.caption %>
-      </div>
+        <div class="item <%= "active" if i == 0 %>">
+          <%= image_tag s.picture.url(:detailed) %>
+          <%= raw s.caption %>
+        </div>
       <% end %>
     </div>
     <!-- Carousel nav -->
@@ -62,36 +62,36 @@
 
   <div class="row events">
     <% @events.each_with_index do |e, i| %>
-    <div class="span5 <%= "offset1" if i == 0 %>">
-      <%= image_tag e.picture.url(:thumb) %>
-      <h2><%= e.title %></h2>
-      <p><span class="date"><%= I18n.l e.date.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if e.date >= Date.today %></h5>
+      <div class="span5 <%= "offset1" if i == 0 %>">
+        <%= image_tag e.picture.url(:thumb) %>
+        <h2><%= e.title %></h2>
+        <p><span class="date"><%= I18n.l e.date.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if e.date >= Date.today %></h5>
       <%= raw e.summary %>
       <p><a href="#" class="btn">Повече информация</a></p>
     </div>
-    <% end %>
-  </div>
+  <% end %>
+</div>
 
 </div><!-- .container -->
 
-  <div class="hero-unit">
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <h1><%= t('section_title.pro_team') %></h1>
-        </div>
+<div class="hero-unit">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h1><%= t('section_title.pro_team') %></h1>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="container">
-    <div class="team">
+<div class="container">
+  <div class="team">
 
-      <div class="row">
+    <div class="row">
 
-        <div class="span12">
-          <div class="row">
-            <% @pro_team.each do |t| %>
+      <div class="span12">
+        <div class="row">
+          <% @pro_team.each do |t| %>
             <div class="span4 item">
               <div class="circle-thumbnail">
                 <%= image_tag t.picture.url(:thumb) %>
@@ -99,53 +99,43 @@
               <h3><%= t.name %></h3>
               <%= raw t.introduction %>
             </div>
-            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div> <!-- /container -->
+
+<div class="hero-unit">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h1>СПОНСОРИ</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="sponsors">
+
+    <div class="row">
+
+      <div class="span12">
+        <div class="row">
+          <div class="span4 item">
+          </div>
+          <div class="span4 item" style="text-align: center">
+            <%= image_tag 'sponsors/vertigo.jpg' %>
+          </div>
+          <div class="span4 item">
           </div>
         </div>
       </div>
-
-
-
     </div>
-  </div> <!-- /container -->
 
-  <div class="hero-unit">
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <h1>СПОНСОРИ</h1>
-        </div>
-      </div>
-    </div>
   </div>
-
-  <div class="container">
-    <div class="sponsors">
-
-      <div class="row">
-
-        <div class="span12">
-          <div class="row">
-            <div class="span4 item">
-            </div>
-            <div class="span4 item" style="text-align: center">
-              <%= image_tag 'sponsors/vertigo.jpg' %>
-            </div>
-            <div class="span4 item">
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <footer>
-  <div class="container">
-    <p class="pull-left">© 2013. Всички права запазени.</p>
-    <!--<p class="pull-right"><a href="#">^</a></p>-->
-  </div>
-  </footer>
-
-
-
+</div>

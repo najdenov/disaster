@@ -1,0 +1,14 @@
+<div class="container">
+
+  <div class="row albums">
+    <div class="span10 offset1">
+
+      <% @albums.each do |a| %>
+        <%= link_to a.title, album_path(a) %>
+      <% end %>
+
+      </div>
+    </div>
+  </div>
+
+</div><!-- .container -->

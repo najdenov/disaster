@@ -29,7 +29,7 @@
           <li><a href="#"><%= t('menu.events') %></a></li>
           <li><a href="#"><%= t('menu.school') %></a></li>
           <li><a href="#"><%= t('menu.community') %></a></li>
-          <li><a href="#"><%= t('menu.photos') %></a></li>
+          <li><%= link_to t('menu.photos'), albums_path %></li>
           <li><a href="#"><%= t('menu.videos') %></a></li>
         </ul>
 
@@ -39,6 +39,13 @@
 </div>
 
 <%= yield %>
+
+<footer>
+  <div class="container">
+    <p class="pull-left">© 2013. Всички права запазени.</p>
+    <!--<p class="pull-right"><a href="#">^</a></p>-->
+  </div>
+</footer>
 
 </body>
 </html>
