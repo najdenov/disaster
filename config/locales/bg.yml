@@ -6,3 +6,6 @@ bg:
     community: "Общество"
     videos: "Видео"
     photos: "Снимки"
+
+  section_title:
+    pro_team: "Про тийм"

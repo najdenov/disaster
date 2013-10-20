@@ -84,7 +84,7 @@
     <div class="container">
       <div class="row">
         <div class="span12">
-          <h1>ПРО ТИЙМ</h1>
+          <h1><%= t('section_title.pro_team') %></h1>
         </div>
       </div>
     </div>
@@ -97,27 +97,15 @@
 
         <div class="span12">
           <div class="row">
+            <% @pro_team.each do |t| %>
             <div class="span4 item">
               <div class="circle-thumbnail">
-                <%= image_tag 'team/niki.jpg' %>
+                <%= image_tag t.picture.url(:thumb) %>
               </div>
-              <h3>Николай Найденов</h3>
-              <p>Изключително гладък стил на рампа, прави триковете да изглеждат лесни.</p>
+              <h3><%= t.name %></h3>
+              <%= raw t.introduction %>
             </div>
-            <div class="span4 item">
-              <div class="circle-thumbnail">
-                <%= image_tag 'team/kiro.jpg' %>
-              </div>
-              <h3>Кирил Траянов</h3>
-              <p>Кирил е един от най-силните карачи на рампа, особено на състезания.</p>
-            </div>
-            <div class="span4 item">
-              <div class="circle-thumbnail">
-                <%= image_tag 'team/pavel.jpg' %>
-              </div>
-              <h3>Павел Митренга</h3>
-              <p>Няма равен със грайндовете си на рампата, също много добър стрийт скейтър.</p>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
