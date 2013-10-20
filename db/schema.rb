@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020131435) do
+ActiveRecord::Schema.define(version: 20131020132832) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -36,6 +36,29 @@ ActiveRecord::Schema.define(version: 20131020131435) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "event_translations", force: true do |t|
+    t.integer  "event_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.text     "summary"
+    t.text     "content"
+  end
+
+  add_index "event_translations", ["event_id"], name: "index_event_translations_on_event_id"
+  add_index "event_translations", ["locale"], name: "index_event_translations_on_locale"
+
+  create_table "events", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.date     "date"
   end
 
   create_table "member_translations", force: true do |t|

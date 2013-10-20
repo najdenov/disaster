@@ -30,3 +30,7 @@ en:
 
   section_title:
     pro_team: "Pro team"
+    events: "Events"
+
+  events:
+    upcoming_event: "upcoming event"

@@ -52,7 +52,7 @@
   <div class="container">
     <div class="row">
       <div class="span12">
-        <h1>Събития</h1>
+        <h1><%= t('section_title.events') %></h1>
       </div>
     </div>
   </div>
@@ -61,24 +61,18 @@
 <div class="container">
 
   <div class="row events">
-    <div class="span5 offset1">
-      <%= image_tag 'events/whiskey.jpg' %>
-      <h2>УИСКИ, КЕШ и КЪНКИ</h2>
-      <p><span class="date">28 Октомври 2013</span>&nbsp;&nbsp;<label class="label label-important">предстоящо събитие</label></h5>
-    <p></p>
-    <p>Слънцето започва да грее, така че време за кънки и за малко Кеш и Уиски...Мястото е известно на всички агро кънкьори - Младост 2 рейловете на Деница! Ето и карта: КАРТА. Ще покараме в два кръга първия на групи на малкия прав рейл,а след това на наклонения ще има директна елиминация,като накрая наградените ще бъдат избрани от самите участници в сешъна.</p>
-    <p><a href="#" class="btn">Повече информация</a></p>
-  </div>
-  <div class="span5">
-    <%= image_tag 'events/beer.jpg' %>
-    <h2>BEER AND BLADE</h2>
-    <p><span class="date">28 Август 2013</span></h5>
-  <p>Първото събитие за годината,започна с молба за слънце и "хамър" трикове-малко по късно изпълнена...около 12:00 вече бяха започнали загрявките,трикове определено бяха сериозни от самото начало,старата школа разбира се закъсняваше(Ави Бару и Людмил Дачев бяха записани още преди да са пристигнали,а съдията Мартин Трифонов определено беше решил да се появи с гръм и трясък след започване на състезанието),за сметка на това пловдивското крю беше на линия от самото начало.</p>
-  <p><a href="#" class="btn">Повече информация</a></p>
-</div>
+    <% @events.each_with_index do |e, i| %>
+    <div class="span5 <%= "offset1" if i == 0 %>">
+      <%= image_tag e.picture.url(:thumb) %>
+      <h2><%= e.title %></h2>
+      <p><span class="date"><%= I18n.l e.date.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if e.date >= Date.today %></h5>
+      <%= raw e.summary %>
+      <p><a href="#" class="btn">Повече информация</a></p>
     </div>
+    <% end %>
+  </div>
 
-  </div><!-- .container -->
+</div><!-- .container -->
 
   <div class="hero-unit">
     <div class="container">

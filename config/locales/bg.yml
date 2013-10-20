@@ -9,3 +9,7 @@ bg:
 
   section_title:
     pro_team: "Про тийм"
+    events: "Събития"
+
+  events:
+    upcoming_event: "предстоящо събитие"
