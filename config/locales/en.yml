@@ -22,6 +22,11 @@
 en:
   menu:
     association: "Association"
+    events: "Events"
+    school: "School"
+    community: "Community"
+    videos: "Videos"
+    photos: "Photos"
 
   section_title:
     pro_team: "Pro team"
