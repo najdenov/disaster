@@ -75,5 +75,6 @@ RailsAdmin.config do |config|
     history_index
     history_show
     delete
+    bulk_delete
   end
 end
