@@ -38,7 +38,7 @@ namespace :deploy do
         #logger.info "Skipping asset pre-compilation because there were no asset changes"
       #end
     #end
-  end
+  #end
 
    task :restart, :roles => :app, :except => { :no_release => true } do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
