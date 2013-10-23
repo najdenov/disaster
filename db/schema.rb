@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023180259) do
+ActiveRecord::Schema.define(version: 20131023191112) do
 
   create_table "album_translations", force: true do |t|
     t.integer  "album_id",   null: false
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20131023180259) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
+    t.string   "slogan"
     t.text     "content"
   end
 

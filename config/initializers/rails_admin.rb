@@ -66,7 +66,7 @@ RailsAdmin.config do |config|
   config.model 'Page::Translation' do
     visible false
     configure :locale, :hidden
-    include_fields :locale, :title, :content
+    include_fields :locale, :title, :slogan, :content
   end
 
   config.actions do
