@@ -45,7 +45,7 @@ namespace :deploy do
    end
 end
 
-#before "deploy:assets:precompile", "deploy:link_db"
+before "deploy:assets:precompile", "deploy:link_db"
 
 after "deploy:restart", "deploy:cleanup"
 
