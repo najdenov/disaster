@@ -27,9 +27,7 @@
           <div class="accordion-group">
             <div class="accordion-heading">
               <h2>
-                <a class="accordion-toggle" data-parent="#accordion2" href="#">
-                  <%= a.title %>
-                </a>
+                <%= link_to a.title, article_path(a), :class => "accordion-toggle" %>
               </h2>
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
@@ -38,6 +36,11 @@
               </div>
               <div class="news-inner">
                 <%= raw a.summary %>
+
+                <% if a.content != "" %>
+                  <br/>
+                  <p><%= link_to I18n.t('articles.read_more'), article_path(a), :class => 'btn' %></p>
+                <% end %>
               </div>
             </div>
           </div>

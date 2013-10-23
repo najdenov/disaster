@@ -1,0 +1,22 @@
+<% content_for :title do %><%= @article.title %> | AISA Disaster<% end %>
+
+<div class="hero-unit">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h1><%= @article.title %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-bottom: 20px">
+  <div class="row albums">
+    <div class="span10 offset1">
+      <div class="author" style="padding-left: 15px; border-top: 0">
+        <h5><%= image_tag @article.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= @article.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l @article.created_at.to_date, :format => :long %></span></h5>
+      </div>
+      <%= raw @article.content %>
+    </div>
+  </div>
+</div><!-- .container -->

@@ -8,6 +8,7 @@ Disaster::Application.routes.draw do
   root 'default#index'
 
   resources :albums
+  resources :articles
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
