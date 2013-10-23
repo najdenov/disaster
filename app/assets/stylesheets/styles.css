@@ -1165,6 +1165,10 @@ blockquote p {
   border-bottom: 1px solid #e5e5e5;
 }
 
+.content-page {
+  font-size: 16px;
+}
+
 .author {
   border-top: 1px solid #e5e5e5;
   /*border-bottom: 1px solid #f5f5f5;*/
