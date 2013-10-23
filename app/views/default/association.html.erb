@@ -1,13 +1,20 @@
 <% content_for :title do %><%= @page.title %> | <%= I18n.t('aisa_disaster') %><% end %>
 
-<div class="hero-unit">
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span12">
-        <h1><%= @page.title %></h1>
-      </div>
+<div class="slider-block">
+
+  <div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+
+        <div class="item active">
+          <img src="https://scontent-b-vie.xx.fbcdn.net/hphotos-ash3/560507_10151448262145035_352484538_n.jpg" />
+          <div class="caption middle-left container">
+          <p class="large pink add-space" style="opacity: 1;">AISA DISASTER</p>
+          <p class="medium white text-pink" style="opacity: 1;">Supporting inline skating since 2002.</p>
+          </div>
+        </div>
     </div>
   </div>
+
 </div>
 
 <div class="container" style="margin-bottom: 20px">
