@@ -1166,6 +1166,7 @@ blockquote p {
 }
 
 .content-page {
+  margin-top: 40px;
   font-size: 16px;
 }
 
