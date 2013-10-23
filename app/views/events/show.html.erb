@@ -1,10 +1,10 @@
-<% content_for :title do %><%= @article.title %> | <%= I18n.t('menu.articles') %> | <%= I18n.t('aisa_disaster') %><% end %>
+<% content_for :title do %><%= @event.title %> | <%= I18n.t('menu.events') %> | <%= I18n.t('aisa_disaster') %><% end %>
 
 <div class="hero-unit">
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span12">
-        <h1><%= @article.title %></h1>
+        <h1><%= @event.title %></h1>
       </div>
     </div>
   </div>
@@ -13,10 +13,10 @@
 <div class="container" style="margin-bottom: 20px">
   <div class="row albums">
     <div class="span10 offset1">
-      <div class="author" style="padding-left: 15px; border-top: 0">
-        <h5><%= image_tag @article.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= @article.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l @article.created_at.to_date, :format => :long %></span></h5>
+      <div class="event" style="border-top: 0">
+        <h5><span class="date"><%= I18n.l @event.created_at.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if @event.date >= Date.today %></h5>
       </div>
-      <%= raw @article.content %>
+      <%= raw @event.content %>
 
       <hr/>
 

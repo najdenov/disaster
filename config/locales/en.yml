@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  aisa_disaster: "AISA Disaster"
+
   menu:
     association: "Association"
     events: "Events"
@@ -27,6 +29,7 @@ en:
     community: "Community"
     videos: "Videos"
     photos: "Photos"
+    articles: "Articles"
 
   section_title:
     pro_team: "Pro team"
@@ -44,3 +47,4 @@ en:
 
   other:
     all_rights_reserved: "All rights reserved."
+    more_information: "More information"

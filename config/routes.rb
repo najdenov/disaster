@@ -9,6 +9,8 @@ Disaster::Application.routes.draw do
 
   resources :albums
   resources :articles
+  resources :events
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

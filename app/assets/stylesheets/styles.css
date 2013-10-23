@@ -1176,8 +1176,8 @@ blockquote p {
 
 .date, .author_name {
   font-size: 14px;
-  /*color: #259ee0;*/
   color: #777;
+  font-weight: normal;
 }
 
 .events {

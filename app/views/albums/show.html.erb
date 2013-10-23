@@ -1,8 +1,8 @@
-<% content_for :title do %><%= @album.title %> | AISA Disaster<% end %>
+<% content_for :title do %><%= @album.title %> | <%= I18n.t('menu.photos') %> | <%= I18n.t('aisa_disaster') %><% end %>
 
 <div class="hero-unit">
-  <div class="container">
-    <div class="row">
+  <div class="container-fluid">
+    <div class="row-fluid">
       <div class="span12">
         <h1><%= @album.title %></h1>
       </div>
