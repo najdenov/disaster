@@ -1,5 +1,7 @@
 #galleria {
-  /*width: 700px;*/
   height: 400px;
-  /*background: white*/
+}
+
+.galleria {
+  height: 150px;
 }

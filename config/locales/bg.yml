@@ -14,3 +14,9 @@ bg:
 
   events:
     upcoming_event: "предстоящо събитие"
+
+  articles:
+    read_more: "Прочети повече"
+
+  photos:
+    look_at_the_photos: "Виж всички снимки"
