@@ -7,6 +7,9 @@ Disaster::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'default#index'
 
+  get 'association' => 'default#association', as: 'association'
+  get 'school' => 'default#school', as: 'school'
+
   resources :albums
   resources :articles
   resources :events

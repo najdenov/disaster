@@ -26,9 +26,9 @@
         <% end %>
 
         <ul class="nav pull-right">
-          <li><a href="#"><%= t('menu.association') %></a></li>
-          <li><a href="#"><%= t('menu.events') %></a></li>
-          <li><a href="#"><%= t('menu.school') %></a></li>
+          <li><%= link_to t('menu.association'), association_path %></li>
+          <li><%= link_to t('menu.events'), events_path %></li>
+          <li><%= link_to t('menu.school'), school_path %></li>
           <li><a href="#"><%= t('menu.community') %></a></li>
           <li><%= link_to t('menu.photos'), albums_path %></li>
           <li><a href="#"><%= t('menu.videos') %></a></li>

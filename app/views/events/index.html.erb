@@ -1,0 +1,27 @@
+<% content_for :title do %><%= I18n.t('menu.events') %> | <%= I18n.t('aisa_disaster') %><% end %>
+
+<div class="hero-unit">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <h1><%= I18n.t('menu.events') %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-bottom: 20px">
+      <div class="row events">
+        <% @events.each_with_index do |e, i| %>
+          <div class="span5 <%= "offset1" if i % 2 == 0 %>">
+            <%= link_to image_tag(e.picture.url(:thumb)), event_path(e) %>
+            <h2><%= link_to e.title, event_path(e) %></h2>
+            <p><span class="date"><%= I18n.l e.date.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if e.date >= Date.today %></h5>
+            <%= raw e.summary %>
+            <p><%= link_to I18n.t('other.more_information'), event_path(e), :class => 'btn' %></p>
+          </div>
+        <% end %>
+      </div>
+</div><!-- .container -->
+
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020143523) do
+ActiveRecord::Schema.define(version: 20131023180259) do
 
   create_table "album_translations", force: true do |t|
     t.integer  "album_id",   null: false
@@ -92,6 +92,24 @@ ActiveRecord::Schema.define(version: 20131020143523) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+  end
+
+  create_table "page_translations", force: true do |t|
+    t.integer  "page_id",    null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.text     "content"
+  end
+
+  add_index "page_translations", ["locale"], name: "index_page_translations_on_locale"
+  add_index "page_translations", ["page_id"], name: "index_page_translations_on_page_id"
+
+  create_table "pages", force: true do |t|
+    t.string   "slug",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "photos", force: true do |t|
