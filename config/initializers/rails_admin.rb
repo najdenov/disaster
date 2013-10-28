@@ -16,7 +16,7 @@ RailsAdmin.config do |config|
 
   config.included_models = ['Article','Article::Translation', 'User', 'User::Translation', 'SliderItem', 'SliderItem::Translation', 'Member', 'Member::Translation', 'Event', 'Event::Translation', 'Album', 'Photo', 'Album::Translation', 'Page', 'Page::Translation']
 
-  config.audit_with :paper_trail, 'User'
+  config.audit_with :paper_trail, 'User', 'Article', 'Page', 'Photo', 'SliderItem', 'Album'
 
   # Exclude specific models (keep the others):
   # config.excluded_models = []
