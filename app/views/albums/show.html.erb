@@ -26,7 +26,7 @@
     <div class="span12">
       <div id="galleria">
         <% @album.photos.each do |p| %>
-          <a href="<%= p.file.url(:detailed) %>"><%= image_tag(p.file.url(:thumb), :data => { :big => p.file.url(:detailed), :title => p.caption }, :alt => "") %></a>
+          <a href="<%= p.file.url(:detailed) %>"><%= image_tag(p.file.url(:thumb), :data => { :big => p.file.url(:detailed), :title => p.caption, :description => "" }, :alt => "") %></a>
         <% end %>
       </div>
     </div>

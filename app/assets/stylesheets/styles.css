@@ -1192,6 +1192,7 @@ blockquote p {
 .events h2 {
   font-weight: 300;
   padding-bottom: 0;
+  text-transform: uppercase;
 }
 
 .events p {
