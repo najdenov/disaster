@@ -76,6 +76,7 @@ RailsAdmin.config do |config|
     multiple_upload do
       only Album
     end
+    change_caption
     show
     edit
     history_index

@@ -20,17 +20,12 @@
 //=  require 'rails_admin/ui'
 //=  require 'rails_admin/custom/ui'
 //=  require 'tinymce-jquery'
+//=  require 'rails_admin/caption'
 
-//$(function() {
-     //jQuery('textarea').tinymce({
-       ////theme: 'advanced'
-     //});
-
-//});
 function tinymce_load(){
 tinymce.init({
 selector: "textarea",
-plugins: "code"
+plugins: "code", "image"
 //plugins: [
 //"advlist autolink lists link image charmap print preview anchor",
 //"searchreplace visualblocks code fullscreen autoresize",

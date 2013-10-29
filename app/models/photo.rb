@@ -4,4 +4,17 @@ class Photo < ActiveRecord::Base
   has_attached_file :file, :styles => { :detailed => "1920x1920>", :thumb => "300x300>" }
 
   has_paper_trail
+
+  rails_admin do
+    list do
+      field :caption do
+        pretty_value do
+          bindings[:view].render :partial => "photo_caption", :locals => {:field => self, :object => bindings[:object]}
+          #bindings[:view].tag(:input, { :class => "photo_caption_input", :value => value, :data => { :id => bindings[:object].id.to_s } })
+        end
+      end
+      field :file
+      field :album
+    end
+  end
 end

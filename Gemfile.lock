@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/nonsense/rails_admin_change_caption
+  revision: 83904e27bb32fe9db666fa277b11f9aab4a18e69
+  specs:
+    rails_admin_change_caption (0.0.1)
+      rails (~> 4.0.0)
+
+GIT
   remote: git://github.com/nonsense/rails_admin_multiple_upload
   revision: f932fa866f93295561906211db3cb72115b4a35b
   branch: rails4
@@ -257,6 +264,7 @@ DEPENDENCIES
   rails (= 4.0.0)
   rails-i18n
   rails_admin
+  rails_admin_change_caption!
   rails_admin_globalize_field
   rails_admin_multiple_upload!
   rvm-capistrano
