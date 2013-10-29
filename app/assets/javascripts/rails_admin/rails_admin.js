@@ -20,7 +20,6 @@
 //=  require 'rails_admin/ui'
 //=  require 'rails_admin/custom/ui'
 //=  require 'tinymce-jquery'
-//=  require 'rails_admin/caption'
 
 function tinymce_load(){
 tinymce.init({
