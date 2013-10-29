@@ -24,7 +24,7 @@
 function tinymce_load(){
 tinymce.init({
 selector: "textarea",
-plugins: "code", "image"
+plugins: ["code", "image"]
 //plugins: [
 //"advlist autolink lists link image charmap print preview anchor",
 //"searchreplace visualblocks code fullscreen autoresize",
