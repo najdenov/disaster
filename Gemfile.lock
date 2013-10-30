@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/nonsense/rails_admin_change_caption
-  revision: 83904e27bb32fe9db666fa277b11f9aab4a18e69
+  revision: 282437fe3646e3a519d550cc542991be713212c3
   specs:
     rails_admin_change_caption (0.0.1)
       rails (~> 4.0.0)

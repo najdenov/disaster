@@ -1,9 +1,13 @@
 class Photo < ActiveRecord::Base
   belongs_to :album
 
+  translates :caption
+
   has_attached_file :file, :styles => { :detailed => "1920x1920>", :thumb => "300x300>" }
 
   has_paper_trail
+
+  accepts_nested_attributes_for :translations, :allow_destroy => true
 
   rails_admin do
     list do

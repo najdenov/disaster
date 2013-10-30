@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023191112) do
+ActiveRecord::Schema.define(version: 20131030101216) do
 
   create_table "album_translations", force: true do |t|
     t.integer  "album_id",   null: false
@@ -113,8 +113,18 @@ ActiveRecord::Schema.define(version: 20131023191112) do
     t.datetime "updated_at"
   end
 
-  create_table "photos", force: true do |t|
+  create_table "photo_translations", force: true do |t|
+    t.integer  "photo_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "caption"
+  end
+
+  add_index "photo_translations", ["locale"], name: "index_photo_translations_on_locale"
+  add_index "photo_translations", ["photo_id"], name: "index_photo_translations_on_photo_id"
+
+  create_table "photos", force: true do |t|
     t.integer  "album_id"
     t.datetime "created_at"
     t.datetime "updated_at"
