@@ -18,6 +18,7 @@ bg:
 
   events:
     upcoming_event: "предстоящо събитие"
+    related_content: "Повече за събитието"
 
   articles:
     read_more: "Прочети повече"

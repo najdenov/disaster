@@ -39,6 +39,7 @@ en:
 
   events:
     upcoming_event: "upcoming event"
+    related_content: "Related content"
 
   articles:
     read_more: "Read more"

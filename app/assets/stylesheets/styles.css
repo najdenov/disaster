@@ -1150,11 +1150,11 @@ blockquote p {
   padding: 0;
 }
 
-.news .accordion-group, .albums .accordion-group {
+.news .accordion-group, .albums .accordion-group, .event-content .accordion-group {
   border: 0;
 }
 
-.news .accordion-toggle, .albums .accordion-toggle {
+.news .accordion-toggle, .albums .accordion-toggle, .event-content .accordion-toggle {
   text-transform: uppercase;
   font-size: 28px;
   font-weight: 300;
@@ -1169,6 +1169,10 @@ blockquote p {
 
 .content-page {
   margin-top: 40px;
+  font-size: 16px;
+}
+
+.event-content {
   font-size: 16px;
 }
 

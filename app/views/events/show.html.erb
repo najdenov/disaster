@@ -11,15 +11,92 @@
 </div>
 
 <div class="container" style="margin-bottom: 20px">
-  <div class="row albums">
+  <div class="row event-content">
     <div class="span10 offset1">
       <div class="event" style="border-top: 0">
         <h5><span class="date"><%= I18n.l @event.created_at.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if @event.date >= Date.today %></h5>
       </div>
 
       <%= raw @event.content %>
+    </div>
+  </div>
+</div>
 
-      <hr/>
+<div class="hero-unit">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <h1><%= I18n.t('events.related_content') %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-bottom: 20px">
+  <div class="row event-content">
+    <div class="span10 offset1">
+
+      <div class="accordion" id="accordion2">
+
+        <% @event.articles.each do |a| %>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <h2>
+                <%= link_to a.title, article_path(a), :class => "accordion-toggle" %>
+              </h2>
+            </div>
+            <div id="collapseOne" class="accordion-body collapse in">
+              <div class="author" style="padding-left: 15px">
+                <h5><%= image_tag a.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= a.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l a.created_at.to_date, :format => :long %></span></h5>
+              </div>
+              <div class="news-inner">
+                <%= raw a.summary %>
+
+                <% if a.content != "" %>
+                  <br/>
+                  <p><%= link_to I18n.t('articles.read_more'), article_path(a), :class => 'btn' %></p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+
+        <% @event.albums.each do |a| %>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <h2>
+                <%= link_to a.title, album_path(a), :class => "accordion-toggle" %>
+              </h2>
+            </div>
+            <div id="collapseOne" class="accordion-body collapse in">
+              <div class="author" style="padding-left: 15px">
+                <h5><%= image_tag a.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= a.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l a.created_at.to_date, :format => :long %></span></h5>
+              </div>
+              <div class="album-inner">
+                <%= raw a.summary %>
+
+                <br/>
+
+                <div class="galleria">
+                <% a.photos.each_with_index do |p, i| %>
+                  <% if i>3 then break end %>
+
+                  <a href="<%= p.file.url(:detailed) %>"><%= image_tag(p.file.url(:thumb), :data => { :big => p.file.url(:detailed), :title => p.caption }, :alt => "") %></a>
+                <% end %>
+                </div>
+
+                <br/>
+
+                <%= link_to I18n.t('photos.look_at_the_photos'), album_path(a), :class => "btn" %>
+                <br/>
+                <br/>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
 
       <div id="disqus_thread"></div>
       <script type="text/javascript">
