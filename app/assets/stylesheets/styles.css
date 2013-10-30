@@ -282,7 +282,7 @@ footer a:hover {
 
 h1, h2, h3, h4, h5 {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight: 600;
+  font-weight: 300;
   padding: 10px 0;
 }
 
@@ -1195,13 +1195,13 @@ blockquote p {
   margin-bottom: 20px;
 }
 
-.events h2 {
+.video h1, .events h2 {
   font-weight: 300;
   padding-bottom: 0;
   text-transform: uppercase;
 }
 
-.events p {
+.events p, .video p {
   font-size: 16px;
 }
 
@@ -1224,4 +1224,15 @@ iframe {
   .navbar .nav > li > a {
     padding: 5px 5px 5px;
   }
+}
+.flowplayer {
+  /*background-color: #fff;*/
+  -webkit-box-shadow: 0 0 20px #ccc;
+  -moz-box-shadow: 0 0 20px #ccc;
+  box-shadow: 0 0 20px #ccc;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+
+  margin-bottom: 20px;
 }

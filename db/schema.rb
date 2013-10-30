@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131030143901) do
+ActiveRecord::Schema.define(version: 20131030165902) do
 
   create_table "album_translations", force: true do |t|
     t.integer  "album_id",   null: false
@@ -222,5 +222,31 @@ ActiveRecord::Schema.define(version: 20131030143901) do
   end
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+
+  create_table "video_translations", force: true do |t|
+    t.integer  "video_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.text     "summary"
+  end
+
+  add_index "video_translations", ["locale"], name: "index_video_translations_on_locale"
+  add_index "video_translations", ["video_id"], name: "index_video_translations_on_video_id"
+
+  create_table "videos", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "splash_file_name"
+    t.string   "splash_content_type"
+    t.integer  "splash_file_size"
+    t.datetime "splash_updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
 
 end
