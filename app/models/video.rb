@@ -5,7 +5,7 @@ class Video < ActiveRecord::Base
 
   translates :title, :summary
 
-  has_attached_file :splash, :styles => { :thumb => "300x300" }
+  has_attached_file :splash, :styles => { :thumb => "800x800>" }
   has_attached_file :file
 
   accepts_nested_attributes_for :translations, :allow_destroy => true
