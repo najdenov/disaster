@@ -22,6 +22,8 @@
   </div>
 </div>
 
+<% if !@event.articles.empty? || !@event.albums.empty? %>
+
 <div class="hero-unit">
   <div class="container-fluid">
     <div class="row-fluid">
@@ -98,6 +100,25 @@
 
       </div>
 
+    </div>
+  </div>
+</div>
+
+    <% end %>
+
+<div class="hero-unit">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <h1><%= I18n.t('other.comments') %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-bottom: 20px">
+  <div class="row event-content">
+    <div class="span10 offset1">
       <div id="disqus_thread"></div>
       <script type="text/javascript">
           /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
