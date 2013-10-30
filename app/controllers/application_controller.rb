@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
     if params[:locale]
       I18n.locale = params[:locale]
     else
-      locale = extract_locale_from_accept_language_header
+      locale = I18n.locale
+      #locale = extract_locale_from_accept_language_header
       if locale == "en"
         I18n.locale = locale.to_sym
       end
@@ -26,7 +27,7 @@ class ApplicationController < ActionController::Base
     { :locale => I18n.locale }
   end
 
-  def extract_locale_from_accept_language_header
-    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first if request.env['HTTP_ACCEPT_LANGUAGE']
-  end
+  #def extract_locale_from_accept_language_header
+    #request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first if request.env['HTTP_ACCEPT_LANGUAGE']
+  #end
 end
