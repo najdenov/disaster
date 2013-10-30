@@ -12,5 +12,6 @@ Disaster::Application.routes.draw do
     resources :albums
     resources :articles
     resources :events
+    resources :videos
   end
 end

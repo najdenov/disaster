@@ -34,9 +34,9 @@
           <li><%= link_to t('menu.constructions'), constructions_path %></li>
           <li><a href="#"><%= t('menu.community') %></a></li>
           <li><%= link_to t('menu.photos'), albums_path %></li>
-          <li><a href="#"><%= t('menu.videos') %></a></li>
+          <li><%= link_to t('menu.videos'), videos_path %></li>
           <li>
-        <% if I18n.locale == I18n.default_locale %>
+        <% if I18n.locale != I18n.default_locale %>
           <%= link_to url_for( :locale => 'bg' ), :class => "pull-right" do %>
             <%= image_tag 'blank.gif', :class => 'flag flag-bg', :style => "margin-top: -3px;", :alt => "Смени език на Български", :title => "Смени език на Български" %><span class="visible-phone visible-tablet" style="float: left; margin-right: 5px;">Български</span>
           <% end %>

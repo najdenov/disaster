@@ -8,17 +8,17 @@ class ApplicationController < ActionController::Base
   def set_locale
     if params[:locale]
       I18n.locale = params[:locale]
-    else
-      locale = I18n.locale
-      #locale = extract_locale_from_accept_language_header
-      if locale == "en"
-        I18n.locale = locale.to_sym
-      end
-
-      if locale == "bg"
-        I18n.locale = locale.to_sym
-      end
     end
+      #locale = I18n.locale
+      ##locale = extract_locale_from_accept_language_header
+      #if locale == "en"
+        #I18n.locale = locale.to_sym
+      #end
+
+      #if locale == "bg"
+        #I18n.locale = locale.to_sym
+      #end
+    #end
 
     I18n.locale = :en unless [ :bg, :en ].include?(I18n.locale)
   end
