@@ -132,8 +132,10 @@ blockquote p {
   text-shadow: none;
 }
 .navbar .nav > li > a:hover {
-  /*color: #fff;*/
-  color: #259ee0;
+  color: #fff;
+  background: #259ee0;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 .navbar .nav > li.active > a {
   background: none;
@@ -1203,3 +1205,19 @@ iframe {
   width: 100%;
 }
 
+@media (min-width: 980px) and (max-width: 1199px) {
+  .navbar {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .navbar .nav {
+    margin-top: 26px;
+  }
+
+  .navbar .nav > li > a {
+    padding: 5px 5px 5px;
+  }
+}

@@ -31,18 +31,19 @@
           <li><%= link_to t('menu.association'), association_path %></li>
           <li><%= link_to t('menu.events'), events_path %></li>
           <li><%= link_to t('menu.school'), school_path %></li>
+          <li><%= link_to t('menu.constructions'), constructions_path %></li>
           <li><a href="#"><%= t('menu.community') %></a></li>
           <li><%= link_to t('menu.photos'), albums_path %></li>
           <li><a href="#"><%= t('menu.videos') %></a></li>
           <li>
         <% if I18n.locale == I18n.default_locale %>
-          <%= link_to url_for( :locale => 'bg' ), :class => "pull-right", :style => "color: #000" do %>
+          <%= link_to url_for( :locale => 'bg' ), :class => "pull-right" do %>
             <%= image_tag 'blank.gif', :class => 'flag flag-bg', :style => "margin-top: -3px;", :alt => "Смени език на Български", :title => "Смени език на Български" %><span class="visible-phone visible-tablet" style="float: left; margin-right: 5px;">Български</span>
           <% end %>
 
           <!-- <a href="/bg" class="btn pull-right hidden-phone hidden-tablet" style="margin-left: 10px; margin-top: 25px;">BG</a> -->
         <% else %>
-          <%= link_to url_for( :locale => 'en' ), :class => "pull-right", :style => "color: #000" do %>
+          <%= link_to url_for( :locale => 'en' ), :class => "pull-right" do %>
             <%= image_tag 'blank.gif', :class => 'flag flag-au', :style => "margin-top: -3px", :alt => "Change language to English", :title => "Change language to English" %><span class="visible-phone visible-tablet" style="float: left; margin-right: 5px">English</span>
           <% end %>
           <!-- <a href="/en" class="btn pull-right hidden-phone hidden-tablet" style="margin-left: 10px; margin-top: 25px;">EN</a> -->

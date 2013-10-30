@@ -7,6 +7,7 @@ Disaster::Application.routes.draw do
 
     get 'association' => 'default#association', as: 'association'
     get 'school' => 'default#school', as: 'school'
+    get 'constructions' => 'default#constructions', as: 'constructions'
 
     resources :albums
     resources :articles

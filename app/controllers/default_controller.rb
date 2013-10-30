@@ -10,6 +10,10 @@ class DefaultController < ApplicationController
     @page = Page.find_by_slug('association')
   end
 
+  def constructions
+    @page = Page.find_by_slug('constructions')
+  end
+
   def school
     @page = Page.find_by_slug('school')
   end
