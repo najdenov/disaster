@@ -11,4 +11,12 @@ class Video < ActiveRecord::Base
   accepts_nested_attributes_for :translations, :allow_destroy => true
 
   has_paper_trail
+
+  def stream
+    if self.url
+      return self.url
+    else
+      return self.file.url
+    end
+  end
 end

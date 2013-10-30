@@ -12,7 +12,7 @@
       <div class="flowplayer is-splash no-embed minimalist"
            style="background-image: url(<%= @video.splash.url %>);">
         <video>
-           <source type="video/mp4" src="<%= @video.file.url() %>">
+           <source type="video/mp4" src="<%= @video.stream %>">
         </video>
       </div>
 
