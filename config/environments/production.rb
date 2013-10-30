@@ -78,6 +78,7 @@ Disaster::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.i18n.default_locale = :en
+  config.i18n.default_locale = :bg
   config.i18n.available_locales = [:en, :bg]
+  config.i18n.fallbacks = [:en]
 end

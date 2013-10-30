@@ -3,7 +3,7 @@
     %li{:class => "#{action.action_name}_root_link"}= link_to wording_for(:menu, action), { :action => action.action_name, :controller => 'rails_admin/main' }, :class => "pjax"
   - if main_app_root_path = (main_app.root_path rescue false)
     %li= link_to t('admin.home.name').capitalize, main_app_root_path
-  - if I18n.locale == I18n.default_locale
+  - if I18n.locale == :en
     %li
       = link_to(url_for(:locale => 'bg'), :style => "color: #000") do
         %span.visible-phone.visible-tablet{style: "float: left; margin-right: 5px;"} Смени език на Български

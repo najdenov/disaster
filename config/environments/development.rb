@@ -27,7 +27,7 @@ Disaster::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.i18n.fallbacks = true
-  config.i18n.default_locale = :en
+  config.i18n.default_locale = :bg
   config.i18n.available_locales = [:en, :bg]
+  config.i18n.fallbacks = [:en]
 end
