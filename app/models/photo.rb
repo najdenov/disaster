@@ -7,6 +7,9 @@ class Photo < ActiveRecord::Base
 
   has_paper_trail
 
+  validates :file, presence: true
+  validates :album, presence: true
+
   accepts_nested_attributes_for :translations, :allow_destroy => true
 
   rails_admin do

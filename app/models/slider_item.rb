@@ -3,6 +3,8 @@ class SliderItem < ActiveRecord::Base
 
   translates :caption
 
+  validates :picture, presence: true
+
   accepts_nested_attributes_for :translations, :allow_destroy => true
 
   has_paper_trail

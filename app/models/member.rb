@@ -4,4 +4,6 @@ class Member < ActiveRecord::Base
   accepts_nested_attributes_for :translations, :allow_destroy => true
 
   has_attached_file :picture, :styles => { :details => "800x800>", :thumb => "100x100>" }
+
+  validates :picture, presence: true
 end
