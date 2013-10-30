@@ -16,6 +16,7 @@
       <div class="event" style="border-top: 0">
         <h5><span class="date"><%= I18n.l @event.created_at.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if @event.date >= Date.today %></h5>
       </div>
+
       <%= raw @event.content %>
 
       <hr/>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131030122751) do
+ActiveRecord::Schema.define(version: 20131030143901) do
 
   create_table "album_translations", force: true do |t|
     t.integer  "album_id",   null: false
@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(version: 20131030122751) do
     t.integer  "user_id"
   end
 
+  create_table "albums_events", force: true do |t|
+    t.integer "event_id"
+    t.integer "album_id"
+  end
+
   create_table "article_translations", force: true do |t|
     t.integer  "article_id", null: false
     t.string   "locale",     null: false
@@ -48,6 +53,11 @@ ActiveRecord::Schema.define(version: 20131030122751) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "articles_events", force: true do |t|
+    t.integer "event_id"
+    t.integer "article_id"
   end
 
   create_table "event_translations", force: true do |t|
