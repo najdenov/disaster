@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+$(document).ready (function () {
+
+
+  $('.bs-docs-sidenav').affix({
+      offset: { top: $('.bs-docs-sidenav').offset().top - 120 }
+  });
+
+  $('body').scrollspy('.bs-docs-sidenav')
+
+})

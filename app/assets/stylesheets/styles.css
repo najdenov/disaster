@@ -1,3 +1,7 @@
+.affix, .navbar-fixed-top{
+  -webkit-transform: scale3d(1,1,1);
+}
+
 @media (min-width: 979px) {
   body {
     padding-top: 80px;
@@ -288,6 +292,10 @@ h1, h2, h3, h4, h5 {
 
 p {
   font-weight: 400;
+  line-height: 170%;
+}
+
+ul li {
   line-height: 170%;
 }
 
@@ -1246,3 +1254,52 @@ iframe {
   -moz-box-shadow: 0 0 20px #ccc;
   box-shadow: 0 0 20px #ccc;
 }
+.page-header {
+  padding-top: 120px;
+  margin-top: 0;
+}
+.bs-docs-sidenav.affix {
+  top: 120px;
+}
+.bs-docs-sidenav.affix-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 270px;
+}
+.content-page h1 {
+  padding-top: 0;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .bs-docs-sidenav {
+    width: auto;
+    top: 0;
+    margin-bottom: 20px;
+  }
+  .bs-docs-sidenav.affix {
+    position: static;
+    width: auto;
+    top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .bs-docs-sidenav {
+    width: 208px;
+  }
+}
+
+@media (min-width: 979px) {
+  .bs-docs-sidenav {
+    width: 280px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bs-docs-sidenav {
+    width: 350px;
+  }
+}
+
