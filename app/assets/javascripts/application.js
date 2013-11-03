@@ -17,11 +17,12 @@
 
 $(document).ready (function () {
 
+  if ($(".bs-docs-sidenav").length) {
+    $('.bs-docs-sidenav').affix({
+        offset: { top: $('.bs-docs-sidenav').offset().top - 120 }
+    });
 
-  $('.bs-docs-sidenav').affix({
-      offset: { top: $('.bs-docs-sidenav').offset().top - 120 }
-  });
-
-  $('body').scrollspy('.bs-docs-sidenav')
+    $('body').scrollspy('.bs-docs-sidenav')
+  }
 
 })
