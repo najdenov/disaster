@@ -1,8 +1,8 @@
 class VideosController < ApplicationController
   def index
-    @video = Video.find(:all, :order => "created_at desc", :limit => 1)[0]
+    @last_videos = Video.find(:all, :order => "created_at desc", :limit => 2)
 
-    @recent_videos = Video.find(:all, :order => "created_at desc", :limit => 3)
+    @recent_videos = Video.find(:all, :order => "created_at desc")
   end
 
   def show

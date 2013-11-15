@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.text     "summary"
   end
 
-  add_index "album_translations", ["album_id"], name: "index_album_translations_on_album_id"
-  add_index "album_translations", ["locale"], name: "index_album_translations_on_locale"
+  add_index "album_translations", ["album_id"], name: "index_album_translations_on_album_id", using: :btree
+  add_index "album_translations", ["locale"], name: "index_album_translations_on_locale", using: :btree
 
   create_table "albums", force: true do |t|
     t.datetime "created_at"
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.text     "content"
   end
 
-  add_index "article_translations", ["article_id"], name: "index_article_translations_on_article_id"
-  add_index "article_translations", ["locale"], name: "index_article_translations_on_locale"
+  add_index "article_translations", ["article_id"], name: "index_article_translations_on_article_id", using: :btree
+  add_index "article_translations", ["locale"], name: "index_article_translations_on_locale", using: :btree
 
   create_table "articles", force: true do |t|
     t.integer  "user_id"
@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.text     "content"
   end
 
-  add_index "event_translations", ["event_id"], name: "index_event_translations_on_event_id"
-  add_index "event_translations", ["locale"], name: "index_event_translations_on_locale"
+  add_index "event_translations", ["event_id"], name: "index_event_translations_on_event_id", using: :btree
+  add_index "event_translations", ["locale"], name: "index_event_translations_on_locale", using: :btree
 
   create_table "events", force: true do |t|
     t.datetime "created_at"
@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.text     "introduction"
   end
 
-  add_index "member_translations", ["locale"], name: "index_member_translations_on_locale"
-  add_index "member_translations", ["member_id"], name: "index_member_translations_on_member_id"
+  add_index "member_translations", ["locale"], name: "index_member_translations_on_locale", using: :btree
+  add_index "member_translations", ["member_id"], name: "index_member_translations_on_member_id", using: :btree
 
   create_table "members", force: true do |t|
     t.datetime "created_at"
@@ -114,8 +114,8 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.text     "content"
   end
 
-  add_index "page_translations", ["locale"], name: "index_page_translations_on_locale"
-  add_index "page_translations", ["page_id"], name: "index_page_translations_on_page_id"
+  add_index "page_translations", ["locale"], name: "index_page_translations_on_locale", using: :btree
+  add_index "page_translations", ["page_id"], name: "index_page_translations_on_page_id", using: :btree
 
   create_table "pages", force: true do |t|
     t.string   "slug",       null: false
@@ -131,8 +131,8 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.string   "caption"
   end
 
-  add_index "photo_translations", ["locale"], name: "index_photo_translations_on_locale"
-  add_index "photo_translations", ["photo_id"], name: "index_photo_translations_on_photo_id"
+  add_index "photo_translations", ["locale"], name: "index_photo_translations_on_locale", using: :btree
+  add_index "photo_translations", ["photo_id"], name: "index_photo_translations_on_photo_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.integer  "album_id"
@@ -144,7 +144,7 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.datetime "file_updated_at"
   end
 
-  add_index "photos", ["album_id"], name: "index_photos_on_album_id"
+  add_index "photos", ["album_id"], name: "index_photos_on_album_id", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
@@ -152,12 +152,12 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      limit: 2
-    t.integer  "year",       limit: 5
+    t.integer  "year",       limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories", using: :btree
 
   create_table "slider_item_translations", force: true do |t|
     t.integer  "slider_item_id", null: false
@@ -167,8 +167,8 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.text     "caption"
   end
 
-  add_index "slider_item_translations", ["locale"], name: "index_slider_item_translations_on_locale"
-  add_index "slider_item_translations", ["slider_item_id"], name: "index_slider_item_translations_on_slider_item_id"
+  add_index "slider_item_translations", ["locale"], name: "index_slider_item_translations_on_locale", using: :btree
+  add_index "slider_item_translations", ["slider_item_id"], name: "index_slider_item_translations_on_slider_item_id", using: :btree
 
   create_table "slider_items", force: true do |t|
     t.datetime "created_at"
@@ -187,8 +187,8 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.string   "name"
   end
 
-  add_index "user_translations", ["locale"], name: "index_user_translations_on_locale"
-  add_index "user_translations", ["user_id"], name: "index_user_translations_on_user_id"
+  add_index "user_translations", ["locale"], name: "index_user_translations_on_locale", using: :btree
+  add_index "user_translations", ["user_id"], name: "index_user_translations_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -209,8 +209,8 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.datetime "avatar_updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "versions", force: true do |t|
     t.string   "item_type",  null: false
@@ -221,7 +221,7 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.datetime "created_at"
   end
 
-  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
   create_table "video_translations", force: true do |t|
     t.integer  "video_id",   null: false
@@ -232,8 +232,8 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.text     "summary"
   end
 
-  add_index "video_translations", ["locale"], name: "index_video_translations_on_locale"
-  add_index "video_translations", ["video_id"], name: "index_video_translations_on_video_id"
+  add_index "video_translations", ["locale"], name: "index_video_translations_on_locale", using: :btree
+  add_index "video_translations", ["video_id"], name: "index_video_translations_on_video_id", using: :btree
 
   create_table "videos", force: true do |t|
     t.integer  "user_id"

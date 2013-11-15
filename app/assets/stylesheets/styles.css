@@ -10,6 +10,7 @@
 
 h2 a {
   color: inherit;
+  text-transform: uppercase;
 }
 h2 a:hover {
   color: inherit;
@@ -247,7 +248,7 @@ blockquote p {
 }
 
 .team {
-  padding-top: 25px;
+  /*padding-top: 25px;*/
   margin-bottom: 25px;
 }
 
@@ -268,19 +269,22 @@ blockquote p {
 }
 
 footer {
-  color: #BBB;
+  color: #333;
+  background: #eeeeee;
   margin-top: 25px;
   padding-top: 10px;
-  background: #555;
 }
 footer p {
   padding-bottom: 0;
+  text-align: center;
+  line-height: 60px;
+  font-size: 16px;
 }
 footer a {
-  color: #BBB;
+  color: #333;
 }
 footer a:hover {
-  color: #BBB;
+  color: #333;
   text-decoration: underline;
 }
 
@@ -288,6 +292,7 @@ h1, h2, h3, h4, h5 {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 300;
   padding: 10px 0;
+  margin: 0;
 }
 
 p {
@@ -1091,7 +1096,7 @@ blockquote p {
   /* #################### */
   /* $SMARTPHONE-HOMEPAGE */
   /* #################### */
-  .team .btn {
+  6team .btn {
     margin: 0 auto;
     float: none;
     display: block;
@@ -1150,7 +1155,7 @@ blockquote p {
   }
 }
 
-.news, .albums {
+.news {
   margin-top: 20px;
 }
 
@@ -1160,6 +1165,7 @@ blockquote p {
 
 .news .accordion-group, .albums .accordion-group, .event-content .accordion-group {
   border: 0;
+  margin-bottom: 20px;
 }
 
 .news .accordion-toggle, .albums .accordion-toggle, .event-content .accordion-toggle {
@@ -1172,7 +1178,6 @@ blockquote p {
 .news-inner, .album-inner {
   padding: 0px 15px;
   font-size: 16px;
-  border-bottom: 1px solid #e5e5e5;
 }
 
 .content-page {
@@ -1185,8 +1190,8 @@ blockquote p {
 }
 
 .author {
-  border-top: 1px solid #e5e5e5;
-  /*border-bottom: 1px solid #f5f5f5;*/
+  padding-left: 15px;
+  margin-bottom: 10px;
 }
 
 .author h5 {
@@ -1303,3 +1308,10 @@ iframe {
   }
 }
 
+.pic-of-the-week .tag-icon {
+  display: inline-block; width: 30px; text-align: center;
+}
+
+.pic-of-the-week img {
+  padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; width: 100%
+}

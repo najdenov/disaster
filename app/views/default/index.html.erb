@@ -20,7 +20,7 @@
 <div class="container">
 
   <div class="row news">
-    <div class="span10 offset1">
+    <div class="span8">
       <div class="accordion" id="accordion2">
 
         <% @articles.each do |a| %>
@@ -36,15 +36,30 @@
               </div>
               <div class="news-inner">
                 <%= raw a.summary %>
-
-                <% if a.content != "" %>
-                  <br/>
-                  <p><%= link_to I18n.t('articles.read_more'), article_path(a), :class => 'btn' %></p>
-                <% end %>
               </div>
             </div>
           </div>
         <% end %>
+
+      </div>
+    </div>
+    <div class="span4">
+      <div class="pic-of-the-week">
+
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <h2 style="text-align: center; margin-bottom: 10px;"><a class="accordion-toggle"><i class="icon icon-camera"></i> PIC OF THE WEEK</a></h2>
+            </div>
+            <div id="collapseOne" class="accordion-body collapse in">
+              <div class="news-inner pic-of-the-week">
+                <%= image_tag 'pic-of-the-week.png' %>
+
+                <p><span class="tag-icon"><i class="icon icon-user"></i></span> Павел Митренга</p>
+                <p><span class="tag-icon"><i class="icon icon-camera"></i></span> Камен Зафиров</p>
+                <p><span class="tag-icon"><i class="icon icon-map-marker"></i></span> София, България</p>
+              </div>
+            </div>
+          </div>
 
       </div>
     </div>
@@ -68,9 +83,8 @@
       <div class="span5 <%= "offset1" if i == 0 %>">
         <%= link_to image_tag(e.picture.url(:thumb)), event_path(e) %>
         <h2><%= link_to e.title, event_path(e) %></h2>
-        <p><span class="date"><%= I18n.l e.date.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if e.date >= Date.today %></h5>
+        <p><span class="date"><i class="icon icon-calendar"></i> <%= I18n.l e.date.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if e.date >= Date.today %></h5>
         <%= raw e.summary %>
-        <p><%= link_to I18n.t('other.more_information'), event_path(e), :class => 'btn' %></p>
       </div>
     <% end %>
   </div>

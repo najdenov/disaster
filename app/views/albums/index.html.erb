@@ -13,10 +13,9 @@
 <div class="container">
 
   <div class="row albums">
-    <div class="span10 offset1">
+    <% @last_albums.each do |a| %>
+    <div class="span6">
       <div class="accordion" id="accordion2">
-
-        <% @albums.each do |a| %>
           <div class="accordion-group">
             <div class="accordion-heading">
               <h2>
@@ -24,7 +23,7 @@
               </h2>
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
-              <div class="author" style="padding-left: 15px">
+              <div class="author">
                 <h5><%= image_tag a.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= a.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l a.created_at.to_date, :format => :long %></span></h5>
               </div>
               <div class="album-inner">
@@ -48,9 +47,9 @@
               </div>
             </div>
           </div>
-        <% end %>
-
       </div>
+    </div>
+    <% end %>
     </div>
   </div>
 </div><!-- .container -->

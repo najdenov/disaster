@@ -16,13 +16,13 @@
 //= require_tree .
 
 $(document).ready (function () {
+  setTimeout(function(){
+    if ($(".bs-docs-sidenav").length) {
+      $('.bs-docs-sidenav').affix({
+          offset: { top: $('.bs-docs-sidenav').offset().top - 120 }
+      });
 
-  if ($(".bs-docs-sidenav").length) {
-    $('.bs-docs-sidenav').affix({
-        offset: { top: $('.bs-docs-sidenav').offset().top - 120 }
-    });
-
-    $('body').scrollspy('.bs-docs-sidenav')
-  }
-
+      $('body').scrollspy('.bs-docs-sidenav')
+    }
+  },1000);
 })
