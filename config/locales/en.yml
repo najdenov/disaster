@@ -39,7 +39,7 @@ en:
 
   events:
     upcoming_event: "upcoming event"
-    upcoming_events: "upcoming events"
+    upcoming_events: "Upcoming Events"
     past_events: "past events"
     archive: "Archive"
     events_from: "Events from "

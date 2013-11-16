@@ -12,7 +12,7 @@
 
 <div class="container" style="margin-bottom: 20px">
   <div class="row event-content">
-    <div class="span10 offset1">
+    <div class="span12">
       <div class="event" style="border-top: 0">
         <h5><span class="date"><%= I18n.l @event.created_at.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if @event.date >= Date.today %></h5>
       </div>
@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<% if !@event.articles.empty? || !@event.albums.empty? %>
+<% if !@event.articles.empty? || !@event.albums.empty? || !@event.videos.empty? %>
 
 <div class="hero-unit">
   <div class="container-fluid">
@@ -35,8 +35,16 @@
 </div>
 
 <div class="container" style="margin-bottom: 20px">
+  <% if @event.videos.length > 0 %>
+  <div class="row">
+    <% @event.videos.each do |v| %>
+      <%= render 'videos/video', { video: v } %>
+    <% end %>
+  </div>
+  <% end %>
+
   <div class="row event-content">
-    <div class="span10 offset1">
+    <div class="span12">
 
       <div class="accordion" id="accordion2">
 
@@ -118,7 +126,7 @@
 
 <div class="container" style="margin-bottom: 20px">
   <div class="row event-content">
-    <div class="span10 offset1">
+    <div class="span12">
       <div id="disqus_thread"></div>
       <script type="text/javascript">
           /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

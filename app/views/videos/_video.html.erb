@@ -1,0 +1,45 @@
+<div class="span12">
+  <h1><%= link_to video.title, video_path(video) %></h1>
+  <div class="author" style="padding-left: 15px">
+    <h5><%= image_tag video.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= video.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l video.created_at.to_date, :format => :long %></span></h5>
+  </div>
+
+  <div class="row">
+    <div class="span8" style="margin-bottom: 20px">
+      <% if video.is_vimeo? %>
+
+        <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
+          <%= render 'videos/vimeo', { :video => video } %>
+        </div>
+
+      <% end %>
+    </div>
+
+    <div class="span4">
+      <p><span class="tag-icon"><i class="icon icon-facetime-video"></i></span> <%= video.author %></p>
+      <p><span class="tag-icon"><i class="icon icon-map-marker"></i></span> <%= video.location %></p>
+      <% if video.events.length > 0 %>
+        <p>
+        <% video.events.each do |e| %>
+          <span class="tag-icon"><i class="icon icon-tag"></i></span>
+          <%= link_to e.title, event_path(e) %>
+        <% end %>
+        </p>
+      <% end %>
+      <hr/>
+      <%= raw video.summary %>
+      <hr/>
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+      <a class="addthis_button_facebook"></a>
+      <a class="addthis_button_twitter"></a>
+      <a class="addthis_button_google_plusone_share"></a>
+      <a class="addthis_button_pinterest_share"></a>
+      <a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+      </div>
+      <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=polig4e"></script>
+      <!-- AddThis Button END -->
+    </div>
+  </div>
+</div>

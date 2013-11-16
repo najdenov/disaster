@@ -1,63 +1,40 @@
 <div class="container" style="margin-top: 20px">
 
   <div class="row video">
-      <div class="span12">
-        <h1><%= @video.title %></h1>
-        <div class="author" style="padding-left: 15px">
-          <h5><%= image_tag @video.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= @video.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l @video.created_at.to_date, :format => :long %></span></h5>
-        </div>
+    <%= render 'video', { :video => @video } %>
 
-        <div class="row">
-          <div class="span8" style="margin-bottom: 20px">
-            <% if @video.is_vimeo? %>
+    <div id="disqus_thread" style="margin-top: 20px"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'aisadisaster'; // required: replace example with your forum shortname
 
-              <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
-                <%= render 'vimeo', { :video => @video } %>
-              </div>
-
-            <% end %>
-          </div>
-
-          <div class="span4">
-            <p><span class="tag-icon"><i class="icon icon-facetime-video"></i></span> Кирил Траянов</p>
-            <p><span class="tag-icon"><i class="icon icon-map-marker"></i></span> София, Монтана, Варна, Бургас</p>
-            <% if @video.events.length > 0 %>
-              <p>
-              <% @video.events.each do |e| %>
-                <span class="tag-icon"><i class="icon icon-tag"></i></span>
-                <%= link_to e.title, event_path(e) %>
-              <% end %>
-              </p>
-            <% end %>
-            <hr/>
-            <%= raw @video.summary %>
-          </div>
-        </div>
-
-
-        <div id="disqus_thread" style="margin-top: 20px"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'aisadisaster'; // required: replace example with your forum shortname
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-      </div>
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
   </div>
 
   <div class="row">
     <hr/>
 
     <% @recent_videos.each do |video| %>
-      <div class="span3">
+      <div class="span6">
         <%= link_to image_tag(video.splash.url(:square), :class => "other_video"), video_path(video) %>
         <h3 style="text-transform: uppercase; line-height: 30px;"><%= link_to video.title, video_path(video) %></h3>
-        <p>&nbsp;</p>
+        <p><span class="tag-icon"><i class="icon icon-calendar"></i></span> <%= I18n.l video.created_at.to_date, :format => :long %></p>
+        <p><span class="tag-icon"><i class="icon icon-facetime-video"></i></span> <%= video.author %></p>
+        <p><span class="tag-icon"><i class="icon icon-map-marker"></i></span> <%= video.location %></p>
+        <% if video.events.length > 0 %>
+          <p>
+          <% video.events.each do |e| %>
+            <span class="tag-icon"><i class="icon icon-tag"></i></span>
+            <%= link_to e.title, event_path(e) %>
+          <% end %>
+          </p>
+        <% end %>
       </div>
     <% end %>
   </div>
