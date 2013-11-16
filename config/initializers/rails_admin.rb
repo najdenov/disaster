@@ -66,7 +66,7 @@ RailsAdmin.config do |config|
   config.model 'Album::Translation' do
     visible false
     configure :locale, :hidden
-    include_fields :locale, :title, :summary
+    include_fields :locale, :title, :summary, :photographer, :location
   end
 
   config.model 'Page::Translation' do

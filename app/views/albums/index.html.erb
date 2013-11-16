@@ -51,5 +51,36 @@
     </div>
     <% end %>
     </div>
+
+    <hr/>
+
+    <% @albums.each do |a| %>
+    <div class="row" style="clear: both; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+      <div class="span12">
+        <%= image_tag a.picture.url(:thumb), style: "float: left; padding: 5px; border: 1px solid #ccc; margin-right: 20px; width: 200px;" %>
+        <h2>
+          <%= link_to a.title, album_path(a), :class => "accordion-toggle" %>
+        </h2>
+
+        <% if a.events.length > 0 %>
+          <p>
+          <% a.events.each do |e| %>
+            <span class="tag-icon"><i class="icon icon-tag"></i></span>
+            <%= link_to e.title, event_path(e) %>
+          <% end %>
+          </p>
+        <% end %>
+        <p><span class="tag-icon"><i class="icon icon-calendar"></i></span> <%= I18n.l a.created_at.to_date, :format => :long %></p>
+
+        <% if a.photographer %>
+        <p><span class="tag-icon"><i class="icon icon-camera"></i></span> <%= a.photographer %></p>
+        <% end %>
+        <% if a.location %>
+        <p><span class="tag-icon"><i class="icon icon-map-marker"></i></span> <%= a.location %></p>
+        <% end %>
+        <%= raw a.summary %>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div><!-- .container -->

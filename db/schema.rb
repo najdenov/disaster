@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131030190616) do
+ActiveRecord::Schema.define(version: 20131116103941) do
 
   create_table "album_translations", force: true do |t|
-    t.integer  "album_id",   null: false
-    t.string   "locale",     null: false
+    t.integer  "album_id",     null: false
+    t.string   "locale",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
     t.text     "summary"
+    t.string   "photographer"
+    t.string   "location"
   end
 
   add_index "album_translations", ["album_id"], name: "index_album_translations_on_album_id", using: :btree
@@ -29,6 +31,10 @@ ActiveRecord::Schema.define(version: 20131030190616) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "albums_events", force: true do |t|
