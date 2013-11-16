@@ -80,11 +80,21 @@
 
   <div class="row events">
     <% @events.each_with_index do |e, i| %>
-      <div class="span5 <%= "offset1" if i == 0 %>">
-        <%= link_to image_tag(e.picture.url(:thumb)), event_path(e) %>
+      <div class="span6">
+        <%= link_to image_tag(e.picture.url(:square), style: "padding: 5px; border: 1px solid #ccc; float: left; margin: 0 20px 20px 0"), event_path(e) %>
         <h2><%= link_to e.title, event_path(e) %></h2>
-        <p><span class="date"><i class="icon icon-calendar"></i> <%= I18n.l e.date.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if e.date >= Date.today %></h5>
+        <p style="margin-bottom: 0px"><span class="date"><span class="tag-icon"><i class="icon icon-calendar"></i></span> <%= I18n.l e.date.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if e.date >= Date.today %></p>
+        <p style="margin-bottom: 0px"><span class="date"><span class="tag-icon"><i class="icon icon-map-marker"></i></span> <%= e.location %></span></p>
+
+        <% e.videos.each do |v| %>
+        <p>
+          <span class="date"><span class="tag-icon"><i class="icon icon-facetime-video"></i></span>
+          <%= link_to v.title, video_path(v) %></span>
+        </p>
+        <% end %>
+
         <%= raw e.summary %>
+        <div class="clear"></div>
       </div>
     <% end %>
   </div>

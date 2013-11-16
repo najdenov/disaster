@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   def index
     @video = Video.find(:all, :order => "created_at desc", :limit => 1)[0]
 
-    @recent_videos = Video.find(:all, :order => "created_at desc")
+    redirect_to video_path(@video)
   end
 
   def show
