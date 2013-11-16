@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116112459) do
+ActiveRecord::Schema.define(version: 20131116124053) do
 
   create_table "album_translations", force: true do |t|
     t.integer  "album_id",     null: false
@@ -88,6 +88,11 @@ ActiveRecord::Schema.define(version: 20131116112459) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.date     "date"
+  end
+
+  create_table "events_videos", force: true do |t|
+    t.integer "event_id"
+    t.integer "video_id"
   end
 
   create_table "member_translations", force: true do |t|
@@ -259,6 +264,8 @@ ActiveRecord::Schema.define(version: 20131116112459) do
     t.datetime "updated_at"
     t.string   "title"
     t.text     "summary"
+    t.string   "location"
+    t.string   "author"
   end
 
   add_index "video_translations", ["locale"], name: "index_video_translations_on_locale", using: :btree
@@ -277,6 +284,7 @@ ActiveRecord::Schema.define(version: 20131116112459) do
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.string   "url"
+    t.string   "code"
   end
 
 end

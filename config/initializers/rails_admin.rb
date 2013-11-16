@@ -30,7 +30,7 @@ RailsAdmin.config do |config|
   config.model 'Video::Translation' do
     visible false
     configure :locale, :hidden
-    include_fields :locale, :title, :summary
+    include_fields :locale, :title, :summary, :location, :author
   end
 
   config.model 'Article::Translation' do
