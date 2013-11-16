@@ -39,6 +39,10 @@ en:
 
   events:
     upcoming_event: "upcoming event"
+    upcoming_events: "upcoming events"
+    past_events: "past events"
+    archive: "Archive"
+    events_from: "Events from "
     related_content: "Related content"
 
   articles:

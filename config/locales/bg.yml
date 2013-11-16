@@ -18,6 +18,10 @@ bg:
 
   events:
     upcoming_event: "предстоящо събитие"
+    upcoming_events: "Предстоящи Събития"
+    past_events: "минали събития"
+    archive: "Архив"
+    events_from: "Събития от "
     related_content: "Повече за събитието"
 
   articles:

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116105843) do
+ActiveRecord::Schema.define(version: 20131116112459) do
 
   create_table "album_translations", force: true do |t|
     t.integer  "album_id",     null: false
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20131116105843) do
     t.string   "title"
     t.text     "summary"
     t.text     "content"
+    t.string   "location"
   end
 
   add_index "event_translations", ["event_id"], name: "index_event_translations_on_event_id", using: :btree

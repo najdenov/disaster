@@ -12,27 +12,34 @@
 
 <div class="container" style="margin-bottom: 20px">
   <div class="row-fluid">
-    <div class="span10">
-    <% @events.each_with_index do |e, i| %>
-      <div class="row-fluid">
-        <div class="span12">
-          <%= link_to image_tag(e.picture.url(:thumb)), event_path(e) %>
-          <h2><%= link_to e.title, event_path(e) %></h2>
-          <p><span class="date"><%= I18n.l e.date.to_date, :format => :long %></span><%= raw '&nbsp;&nbsp;<label class="label label-important">' + t('events.upcoming_event') + '</label>' if e.date >= Date.today %></h5>
-          <%= raw e.summary %>
-          <p><%= link_to I18n.t('other.more_information'), event_path(e), :class => 'btn' %></p>
-        </div>
-      </div>
-    <% end %>
+    <div class="span9">
+      <h2 id="upcoming_events" style="text-transform: uppercase"><%= I18n.t('events.upcoming_events') %></h2>
+      <hr/>
+      <% @upcoming_events.each_with_index do |e, i| %>
+        <%= render 'event', { e: e } %>
+      <% end %>
+
+      <h2 style="text-transform: uppercase"><%= I18n.t('events.past_events') %></h2>
+      <hr/>
+      <% years = Array.new %>
+      <% @past_events.each_with_index do |e, i| %>
+        <% if !(years.include? e.date.year) %>
+          <div id="events_<%= e.date.year %>" style="position: absolute; margin-top: -100px"></div>
+          <% years << e.date.year %>
+        <% end %>
+
+        <%= render 'event', { e: e } %>
+      <% end %>
     </div>
-    <div class="span2 bs-docs-sidebar">
-      <p>All Events</p>
+    <div class="span3 bs-docs-sidebar">
       <ul class="nav nav-list bs-docs-sidenav">
-        <li><a href="#what_is_aisa_disaster">2014</a></li>
-        <li><a href="#how_was_aisa_disaster_created">2013</a></li>
-        <li><a href="#why_was_aisa_disaster_created">2012</a></li>
-        <li><a href="#who_are_the_sponsors_of_aisa_disaster">2011</a></li>
-        <li><a href="#difference_between_aisa_disaster_and_team_disaster">2010</a></li>
+        <li><a href="#upcoming_events"><%= I18n.t('events.upcoming_events') %></a></li>
+        <li><a href="#events_2013"><%= I18n.t('events.events_from') %>2013</a></li>
+        <li><a href="#events_2012"><%= I18n.t('events.events_from') %>2012</a></li>
+        <li><a href="#events_2011"><%= I18n.t('events.events_from') %>2011</a></li>
+        <li><a href="#events_2010"><%= I18n.t('events.events_from') %>2010</a></li>
+        <li><a href="#events_2009"><%= I18n.t('events.events_from') %>2009</a></li>
+        <li><a href="#archive"><%= I18n.t('events.archive') %></a></li>
       </ul>
     </div>
   </div>

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.find(:all, :order => "created_at desc", :limit => 10)
+    @upcoming_events = Event.find(:all, :conditions => ["date>=?", Date.today], :order => "date desc", :limit => 10)
+    @past_events = Event.find(:all, :conditions => ["date<?", Date.today], :order => "date desc", :limit => 10)
   end
 
   def show
