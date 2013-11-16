@@ -52,11 +52,11 @@
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
               <div class="news-inner pic-of-the-week">
-                <%= image_tag 'pic-of-the-week.png' %>
+                <%= image_tag @pic_week.picture.url(:thumb) %>
 
-                <p><span class="tag-icon"><i class="icon icon-user"></i></span> Павел Митренга</p>
-                <p><span class="tag-icon"><i class="icon icon-camera"></i></span> Камен Зафиров</p>
-                <p><span class="tag-icon"><i class="icon icon-map-marker"></i></span> София, България</p>
+                <p><span class="tag-icon"><i class="icon icon-user"></i></span> <%= @pic_week.rider %></p>
+                <p><span class="tag-icon"><i class="icon icon-camera"></i></span> <%= @pic_week.photographer %></p>
+                <p><span class="tag-icon"><i class="icon icon-map-marker"></i></span> <%= @pic_week.location %></p>
               </div>
             </div>
           </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116103941) do
+ActiveRecord::Schema.define(version: 20131116105843) do
 
   create_table "album_translations", force: true do |t|
     t.integer  "album_id",     null: false
@@ -151,6 +151,28 @@ ActiveRecord::Schema.define(version: 20131116103941) do
   end
 
   add_index "photos", ["album_id"], name: "index_photos_on_album_id", using: :btree
+
+  create_table "pic_of_the_week_translations", force: true do |t|
+    t.integer  "pic_of_the_week_id", null: false
+    t.string   "locale",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "rider"
+    t.string   "photographer"
+    t.string   "location"
+  end
+
+  add_index "pic_of_the_week_translations", ["locale"], name: "index_pic_of_the_week_translations_on_locale", using: :btree
+  add_index "pic_of_the_week_translations", ["pic_of_the_week_id"], name: "index_pic_of_the_week_translations_on_pic_of_the_week_id", using: :btree
+
+  create_table "pic_of_the_weeks", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
