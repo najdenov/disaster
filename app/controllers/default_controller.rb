@@ -3,7 +3,7 @@ class DefaultController < ApplicationController
     @articles = Article.find(:all, :order => "created_at desc", :limit => 2)
     @slider_items = SliderItem.find(:all, :order => "created_at desc", :limit => 5)
     @pro_team = Member.find(:all, :order => "created_at desc", :limit => 3)
-    @events = Event.find(:all, :order => "created_at desc", :limit => 2)
+    @events = Event.find(:all, :order => "date desc", :limit => 2)
 
     @pic_week = PicOfTheWeek.find(:all, :order => "created_at desc", :limit => 1)[0]
   end
