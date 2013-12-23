@@ -19,6 +19,10 @@
         <%= render 'event', { e: e } %>
       <% end %>
 
+      <% if @upcoming_events.length == 0 %>
+        <p><%= I18n.t('events.no_upcoming_events') %></p>
+      <% end %>
+
       <h2 style="text-transform: uppercase"><%= I18n.t('events.past_events') %></h2>
       <hr/>
       <% years = Array.new %>

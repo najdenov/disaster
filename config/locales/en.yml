@@ -40,6 +40,7 @@ en:
   events:
     upcoming_event: "upcoming event"
     upcoming_events: "Upcoming Events"
+    no_upcoming_events: "At the moment there are no upcoming events."
     past_events: "past events"
     archive: "Archive"
     events_from: "Events from "
