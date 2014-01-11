@@ -14,7 +14,7 @@
   <div class="row albums">
     <div class="span6">
       <div class="author" style="padding-left: 15px; border-top: 0">
-        <h5><%= image_tag @album.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= @album.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l @album.created_at.to_date, :format => :long %></span></h5>
+        <h5><%= image_tag @album.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= @album.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l @album.date.to_date, :format => :long %></span></h5>
       </div>
     </div>
     <div class="span6" style="padding-top: 25px">

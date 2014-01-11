@@ -9,6 +9,7 @@ class Photo < ActiveRecord::Base
 
   validates :file, presence: true
   validates :album, presence: true
+  validates :date, presence: true
 
   accepts_nested_attributes_for :translations, :allow_destroy => true
 

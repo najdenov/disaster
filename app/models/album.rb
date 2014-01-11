@@ -1,5 +1,5 @@
 class Album < ActiveRecord::Base
-  has_many :photos
+  has_many :photos, :order => 'date DESC'
   belongs_to :user
 
   has_and_belongs_to_many :events
