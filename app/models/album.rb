@@ -7,6 +7,7 @@ class Album < ActiveRecord::Base
   translates :title, :summary, :photographer, :location
 
   validates :user, presence: true
+  validates :date, presence: true
 
   accepts_nested_attributes_for :photos, :allow_destroy => true
   accepts_nested_attributes_for :translations, :allow_destroy => true

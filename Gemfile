@@ -45,7 +45,7 @@ gem 'rvm-capistrano'
 
 gem 'pry'
 
-gem 'mysql2'
+gem 'mysql2', '0.3.14'
 
 gem 'tinymce-rails'
 
