@@ -29,8 +29,13 @@
         <%= link_to image_tag(video.splash.url(:square), :class => "other_video"), video_path(video) %>
         <h3 style="text-transform: uppercase; line-height: 30px;"><%= link_to video.title, video_path(video) %></h3>
         <p><span class="tag-icon"><i class="icon icon-calendar"></i></span> <%= I18n.l video.created_at.to_date, :format => :long %></p>
-        <p><span class="tag-icon"><i class="icon icon-facetime-video"></i></span> <%= video.author %></p>
-        <p><span class="tag-icon"><i class="icon icon-map-marker"></i></span> <%= video.location %></p>
+        <% if video.author != "" %>
+          <p><span class="tag-icon"><i class="icon icon-facetime-video"></i></span> <%= video.author %></p>
+        <% end %>
+
+        <% if video.location != "" %>
+          <p><span class="tag-icon"><i class="icon icon-map-marker"></i></span> <%= video.location %></p>
+        <% end %>
         <% if video.events.length > 0 %>
           <p>
           <% video.events.each do |e| %>
