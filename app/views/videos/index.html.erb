@@ -22,9 +22,7 @@
   </div>
 
   <div class="row">
-    <hr/>
-
-    <% @recent_videos.each do |video| %>
+    <% @recent_videos.each_with_index do |video, j| %>
       <div class="span6">
         <%= link_to image_tag(video.splash.url(:square), :class => "other_video"), video_path(video) %>
         <h3 style="text-transform: uppercase; line-height: 30px;"><%= link_to video.title, video_path(video) %></h3>
@@ -45,6 +43,10 @@
           </p>
         <% end %>
       </div>
+
+      <% if ((j+1) % 2 == 0) %>
+        </div><div class="row">
+      <% end %>
     <% end %>
   </div>
 
