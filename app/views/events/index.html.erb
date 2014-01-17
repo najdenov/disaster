@@ -27,7 +27,9 @@
       <hr/>
       <% years = Array.new %>
       <% @past_events.each_with_index do |e, i| %>
-        <% if !(years.include? e.date.year) %>
+        <% if e.date.year <= 2005 %>
+          <div id="archive" style="position: absolute; margin-top: -100px"></div>
+        <% elsif !(years.include? e.date.year) %>
           <div id="events_<%= e.date.year %>" style="position: absolute; margin-top: -100px"></div>
           <% years << e.date.year %>
         <% end %>
@@ -43,6 +45,9 @@
         <li><a href="#events_2011"><%= I18n.t('events.events_from') %>2011</a></li>
         <li><a href="#events_2010"><%= I18n.t('events.events_from') %>2010</a></li>
         <li><a href="#events_2009"><%= I18n.t('events.events_from') %>2009</a></li>
+        <li><a href="#events_2008"><%= I18n.t('events.events_from') %>2008</a></li>
+        <li><a href="#events_2007"><%= I18n.t('events.events_from') %>2007</a></li>
+        <li><a href="#events_2006"><%= I18n.t('events.events_from') %>2006</a></li>
         <li><a href="#archive"><%= I18n.t('events.archive') %></a></li>
       </ul>
     </div>
