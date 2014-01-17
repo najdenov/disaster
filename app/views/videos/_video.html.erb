@@ -16,8 +16,12 @@
     </div>
 
     <div class="span4">
-      <p><span class="tag-icon"><i class="icon icon-facetime-video"></i></span> <%= video.author %></p>
-      <p><span class="tag-icon"><i class="icon icon-map-marker"></i></span> <%= video.location %></p>
+      <% if video.author != "" %>
+        <p><span class="tag-icon"><i class="icon icon-facetime-video"></i></span> <%= video.author %></p>
+      <% end %>
+      <% if video.location != "" %>
+        <p><span class="tag-icon"><i class="icon icon-map-marker"></i></span> <%= video.location %></p>
+      <% end %>
       <% if video.events.length > 0 %>
         <p>
         <% video.events.each do |e| %>
