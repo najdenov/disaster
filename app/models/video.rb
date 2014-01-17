@@ -29,4 +29,12 @@ class Video < ActiveRecord::Base
       return false
     end
   end
+
+  def is_youtube?
+    if self.code
+      return self.code.include? "youtube"
+    else
+      return false
+    end
+  end
 end

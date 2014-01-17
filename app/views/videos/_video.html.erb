@@ -9,13 +9,15 @@
       <% if video.is_vimeo? %>
 
         <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
-          <% if video.include? "vimeo" %>
             <%= render 'videos/vimeo', { :video => video } %>
-          <% end %>
+        </div>
 
-          <% if video.include? "youtube" %>
+      <% end %>
+
+      <% if video.is_youtube? %>
+
+        <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
             <%= render 'videos/youtube', { :video => video } %>
-          <% end %>
         </div>
 
       <% end %>
