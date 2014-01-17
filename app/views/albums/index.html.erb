@@ -72,10 +72,10 @@
         <% end %>
         <p><span class="tag-icon"><i class="icon icon-calendar"></i></span> <%= I18n.l a.date.to_date, :format => :long %></p>
 
-        <% if a.photographer %>
+        <% if a.photographer != "" %>
         <p><span class="tag-icon"><i class="icon icon-camera"></i></span> <%= a.photographer %></p>
         <% end %>
-        <% if a.location %>
+        <% if a.location != "" %>
         <p><span class="tag-icon"><i class="icon icon-map-marker"></i></span> <%= a.location %></p>
         <% end %>
         <%= raw a.summary %>
