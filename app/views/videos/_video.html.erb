@@ -1,7 +1,12 @@
 <div class="span12">
   <h1><%= link_to video.title, video_path(video) %></h1>
   <div class="author" style="padding-left: 15px">
+    <% # hack for hiding dates before March, 2014 %>
+    <% if video.created_at > Date.new(2014,3,1) %>
     <h5><%= image_tag video.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= video.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l video.created_at.to_date, :format => :long %></span></h5>
+    <% else %>
+    <h5><%= image_tag video.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= video.user.name %></span></h5>
+    <% end %>
   </div>
 
   <div class="row">

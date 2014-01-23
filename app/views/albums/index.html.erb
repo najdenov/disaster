@@ -24,7 +24,12 @@
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
               <div class="author">
+              <% # hack for hiding dates before March, 2014 %>
+              <% if a.date > Date.new(2014,3,1) %>
                 <h5><%= image_tag a.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= a.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l a.date.to_date, :format => :long %></span></h5>
+              <% else %>
+                <h5><%= image_tag a.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= a.user.name %></span></h5>
+              <% end %>
               </div>
               <div class="album-inner">
                 <%= raw a.summary %>
@@ -70,7 +75,11 @@
           <% end %>
           </p>
         <% end %>
+
+        <% # hack for hiding dates before March, 2014 %>
+        <% if a.date > Date.new(2014,3,1) %>
         <p><span class="tag-icon"><i class="icon icon-calendar"></i></span> <%= I18n.l a.date.to_date, :format => :long %></p>
+        <% end %>
 
         <% if a.photographer != "" %>
         <p><span class="tag-icon"><i class="icon icon-camera"></i></span> <%= a.photographer %></p>

@@ -14,7 +14,13 @@
   <div class="row albums">
     <div class="span6">
       <div class="author" style="padding-left: 15px; border-top: 0">
+
+        <% # hack for hiding dates before March, 2014 %>
+        <% if @album.date > Date.new(2014,3,1) %>
         <h5><%= image_tag @album.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= @album.user.name %></span>&nbsp;&nbsp;<span class="divider" style="color: #e5e5e5">|</span>&nbsp;&nbsp;<span class="date"><%= I18n.l @album.date.to_date, :format => :long %></span></h5>
+        <% else %>
+        <h5><%= image_tag @album.user.avatar.url(:thumb), :class => "img img-circle", :style => "width: 60px; height: 60px; margin-right: 10px" %><span class="author_name"><%= @album.user.name %></span></h5>
+        <% end %>
       </div>
     </div>
     <div class="span6" style="padding-top: 25px">
